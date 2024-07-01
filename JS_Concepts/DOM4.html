@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM4</title>
+</head>
+<body style="background-color: #2f2f2f; color: aliceblue;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+    <script>
+        function lanadd(langname)
+        {
+             const li=document.createElement('li');
+             li.innerHTML=`${langname}`
+             document.querySelector('.language').
+             appendChild(li)
+        }
+        lanadd("Python")
+        lanadd("Typescript")
+        lanadd("Ruby")
+
+        function optimize(langname)
+        {
+            const li=document.createElement('li');
+            li.appendChild(document.createTextNode(langname))
+            document.querySelector('.language').appendChild(li)
+        }
+        optimize('Golang')
+        optimize('Cpp')
+        optimize('Swift')
+
+        //edit
+        const secondlang=document.querySelector("li:nth-child(2)")
+        const newli=document.createElement('li')
+        newli.textContent="Java"
+        secondlang.replaceWith(newli)
+        
+        const firstlang=document.querySelector('li:first-child')
+        firstlang.outerHTML='<li>Rust</li>'
+
+        //REMOVE
+        const lastlang=document.querySelector('li:last-child')
+        lastlang.remove()  // removed swift
+        </script>
+</html>
